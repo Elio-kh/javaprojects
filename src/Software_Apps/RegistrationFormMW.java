@@ -1,9 +1,13 @@
+
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Elio
@@ -26,30 +30,30 @@ public class RegistrationFormMW extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        fname = new javax.swing.JTextField();
+        lname = new javax.swing.JTextField();
+        id = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        c300 = new javax.swing.JCheckBox();
+        c310l = new javax.swing.JCheckBox();
+        c415 = new javax.swing.JCheckBox();
+        tripoli = new javax.swing.JRadioButton();
+        saida = new javax.swing.JRadioButton();
+        beirut = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        fname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        id.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("First Name:");
@@ -67,30 +71,35 @@ public class RegistrationFormMW extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 255));
         jLabel5.setText("Courses:");
 
-        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jCheckBox1.setText("CENG300");
+        c300.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        c300.setText("CENG300");
 
-        jCheckBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jCheckBox2.setText("CENG310L");
+        c310l.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        c310l.setText("CENG310L");
 
-        jCheckBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jCheckBox3.setText("CENG415");
+        c415.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        c415.setText("CENG415");
 
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton1.setText("Tripoli");
+        tripoli.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tripoli.setText("Tripoli");
 
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton2.setText("Saida");
+        saida.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        saida.setText("Saida");
 
-        jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton3.setText("Beirut");
+        beirut.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        beirut.setText("Beirut");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel6.setText("Student Information");
 
-        jButton1.setBackground(java.awt.SystemColor.activeCaptionBorder);
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Submit");
+        submit.setBackground(java.awt.SystemColor.activeCaptionBorder);
+        submit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,27 +113,27 @@ public class RegistrationFormMW extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel3)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton1)
+                            .addComponent(saida)
+                            .addComponent(beirut, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tripoli)
                             .addComponent(jLabel4))
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox3)
+                            .addComponent(c300)
+                            .addComponent(c310l)
+                            .addComponent(c415)
                             .addComponent(jLabel5)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(141, 141, 141)
@@ -132,7 +141,7 @@ public class RegistrationFormMW extends javax.swing.JFrame {
                 .addContainerGap(69, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(submit)
                 .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
@@ -146,29 +155,84 @@ public class RegistrationFormMW extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jRadioButton1))
+                    .addComponent(c300)
+                    .addComponent(tripoli))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jRadioButton2))
+                    .addComponent(c310l)
+                    .addComponent(saida))
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jRadioButton3))
+                    .addComponent(c415)
+                    .addComponent(beirut))
                 .addGap(33, 33, 33)
-                .addComponent(jButton1)
+                .addComponent(submit)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        String Fname = fname.getText().toString();
+        String Lname = lname.getText().toString();
+        String Id = id.getText().toString();
+
+        // Step 2: Determine selected campus
+        String Campus = "";
+        if (tripoli.isSelected()) {
+            Campus = "Tripoli";
+        } else if (saida.isSelected()) {
+            Campus = "Saida";
+        } else if (beirut.isSelected()) {
+            Campus = "Beirut";
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a campus.");
+            return; // Exit if no campus selected
+        }
+        String course = "";
+
+        // Step 3: Display confirmation
+        JOptionPane.showMessageDialog(this,
+                "Student registered in campus: " + Campus
+                + "\nCourse selected: " + course);
+
+        if (c300.isSelected()) {
+            course += "CENG300 ";
+        }
+        if (c310l.isSelected()) {
+            course += "CENG310L ";
+        }
+        if (c415.isSelected()) {
+            course += "CENG415 ";
+        }
+        if (Fname.isEmpty() || Lname.isEmpty() || Id.isEmpty() || Campus.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill all required fields!");
+            return;
+        }
+        try (FileWriter writer = new FileWriter("students.txt", true)) {
+            writer.write(Fname + " " + Lname + " " + id + " " + Campus + " " + course.toString().trim() + "\n");
+            JOptionPane.showMessageDialog(this, "Student information saved successfully!");
+
+            // Clear fields after saving
+            fname.setText("");
+            lname.setText("");
+            id.setText("");
+            Campus.clearSelection();
+            c300.setSelected(false);
+            c310l.setSelected(false);
+            c415.setSelected(false);
+
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error saving file: " + ex.getMessage());
+        }
+                                              }//GEN-LAST:event_submitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,21 +270,21 @@ public class RegistrationFormMW extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JRadioButton beirut;
+    private javax.swing.JCheckBox c300;
+    private javax.swing.JCheckBox c310l;
+    private javax.swing.JCheckBox c415;
+    private javax.swing.JTextField fname;
+    private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField lname;
+    private javax.swing.JRadioButton saida;
+    private javax.swing.JButton submit;
+    private javax.swing.JRadioButton tripoli;
     // End of variables declaration//GEN-END:variables
 }
