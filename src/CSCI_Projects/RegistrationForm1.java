@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Software_Apps;
+package CSCI_Projects;
 
+import Software_Apps.*;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -20,12 +21,12 @@ import javax.swing.JTable;
  *
  * @author Elio
  */
-public class RegistrationForm extends javax.swing.JFrame {
+public class RegistrationForm1 extends javax.swing.JFrame {
 
     /**
      * Creates new form registrationform
      */
-    public RegistrationForm() {
+    public RegistrationForm1() {
         initComponents();
 
     }
@@ -46,9 +47,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         saida = new javax.swing.JRadioButton();
         tripoli = new javax.swing.JRadioButton();
         beirut = new javax.swing.JRadioButton();
-        c300 = new javax.swing.JCheckBox();
-        c310l = new javax.swing.JCheckBox();
-        c415 = new javax.swing.JCheckBox();
         submit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         out = new javax.swing.JTextArea();
@@ -61,6 +59,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         saloumi = new javax.swing.JRadioButton();
+        course = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,15 +74,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         buttonGroup1.add(beirut);
         beirut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         beirut.setText("Beirut");
-
-        c300.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        c300.setText("CENG300");
-
-        c310l.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        c310l.setText("CENG310L");
-
-        c415.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        c415.setText("CENG415");
 
         submit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         submit.setText("Submit");
@@ -135,6 +125,13 @@ public class RegistrationForm extends javax.swing.JFrame {
         buttonGroup1.add(saloumi);
         saloumi.setText("Saloumi");
 
+        course.setText("courses");
+        course.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                courseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,28 +155,21 @@ public class RegistrationForm extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(saloumi)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tripoli)
+                                    .addComponent(beirut)
+                                    .addComponent(saida))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(course)))
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(c310l)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(saloumi)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(tripoli)
-                                        .addComponent(beirut)
-                                        .addComponent(saida))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(31, 31, 31)
-                                            .addComponent(c300))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(30, 30, 30)
-                                            .addComponent(c415)))))
-                            .addGap(5, 5, 5))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(submit)
@@ -209,26 +199,28 @@ public class RegistrationForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(saida)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(c300)
-                            .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tripoli, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(c310l)
-                            .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(beirut)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(c415)
-                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(saloumi)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(saida)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tripoli, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(beirut)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(saloumi))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(course)))))
                 .addGap(27, 27, 27)
                 .addComponent(close)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -255,25 +247,14 @@ public class RegistrationForm extends javax.swing.JFrame {
             campus = "Saloumi";
 
         }
+        String courses = course.getText();
 
-        // Courses selection (can be multiple)
-        String courses = "";
-
-        if (c300.isSelected()) {
-            courses += "CENG300 ";
-        }
-        if (c310l.isSelected()) {
-            courses += "CENG310L ";
-        }
-        if (c415.isSelected()) {
-            courses += "CENG415 ";
-        }
         if (fn.isEmpty() || ln.isEmpty() || i.isEmpty() || campus.isEmpty() || courses.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill all required fields!");
             return;
         }
 
-        out.setText(fn + "\n" + ln + "\n" + i + "\n" + campus + "\n" + courses);
+        out.setText(fn + "\n" + ln + "\n" + i + "\n" + campus + "\n" + courses + " ");
 
         int confirm = JOptionPane.showConfirmDialog(
                 this, "Are you sure you want to save this record?", "Confirm Save", JOptionPane.YES_NO_OPTION);
@@ -283,13 +264,13 @@ public class RegistrationForm extends javax.swing.JFrame {
             return;
         }
 
-        // Write data to file
         try (FileWriter stdinf = new FileWriter("data.txt", true)) {
             stdinf.write(fn + "\n");
             stdinf.write(ln + "\n");
             stdinf.write(i + "\n");
             stdinf.write(campus + "\n");
             stdinf.write(courses + "\n");
+
             JOptionPane.showMessageDialog(this, "Student information saved successfully!");
             fname.setText("");
             lname.setText("");
@@ -299,9 +280,6 @@ public class RegistrationForm extends javax.swing.JFrame {
             saida.setSelected(false);
             tripoli.setSelected(false);
             beirut.setSelected(false);
-            c300.setSelected(false);
-            c415.setSelected(false);
-            c310l.setSelected(false);
 
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Error writing to file: " + ex.getMessage());
@@ -367,6 +345,13 @@ public class RegistrationForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_showallActionPerformed
 
+    private void courseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseActionPerformed
+        String course;
+        course = JOptionPane.showInputDialog(null,
+                "Enter the name of the course:", "Input1", JOptionPane.PLAIN_MESSAGE);
+
+        JOptionPane.showMessageDialog(null, "Welcome to" + " " + course + " class. " + "", "", JOptionPane.PLAIN_MESSAGE);    }//GEN-LAST:event_courseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -386,28 +371,30 @@ public class RegistrationForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistrationForm.class
+            java.util.logging.Logger.getLogger(RegistrationForm1.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistrationForm.class
+            java.util.logging.Logger.getLogger(RegistrationForm1.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistrationForm.class
+            java.util.logging.Logger.getLogger(RegistrationForm1.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistrationForm.class
+            java.util.logging.Logger.getLogger(RegistrationForm1.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistrationForm().setVisible(true);
+                new RegistrationForm1().setVisible(true);
             }
         });
     }
@@ -415,10 +402,8 @@ public class RegistrationForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton beirut;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JCheckBox c300;
-    private javax.swing.JCheckBox c310l;
-    private javax.swing.JCheckBox c415;
     private javax.swing.JButton close;
+    private javax.swing.JButton course;
     private javax.swing.JTextField fname;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
